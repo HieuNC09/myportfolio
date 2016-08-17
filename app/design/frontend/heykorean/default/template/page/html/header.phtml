@@ -1,0 +1,161 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+
+<div class="header-language-background">
+    <div class="header-language-container">
+        <!-- Start Static Block Top Header -->
+        <div class="top-header-left">
+            <div class="control-select-box">
+                <span></span>
+                <select class="selector">
+                    <option value="">Hanoi</option>
+                    <option value="">Korea</option>
+                </select>
+            </div>
+        </div>
+        <div class="top-header-right">
+            <div class="top-links">
+                <ul>
+                    <li><a>Club</a></li>
+                    <li><a>Housing</a></li>
+                    <li><a>Jobs</a></li>
+                    <li><a>MENTORING</a></li>
+                    <li><a>YELLOWPAGE</a></li>
+                    <li><a>More</a></li>
+                </ul>
+            </div>
+            <div class="top-control">
+                <ul>
+                    <li><a><img src="http://myportfolio.local/skin/frontend/heykorean/default/images/icon/us-ic.png"
+                                alt=""/></a></li>
+                    <li><a><img src="http://myportfolio.local/skin/frontend/heykorean/default/images/icon/korea-ic.png"
+                                alt=""/> </a></li>
+                </ul>
+                <button class="button" type="button"><span><span>Login</span></span></button>
+                <div class="control-select-box">
+                    <span></span>
+                    <select class="selector">
+                        <option value="">Select Language</option>
+                        <option value="">English</option>
+                        <option value="">Vietnamese</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- End Static Block Top Header -->
+        <div class="clear-left"></div>
+    </div>
+</div>
+<header id="header" class="page-header">
+    <div class="page-header-container">
+        <a class="logo" href="http://myportfolio.local/">
+            <img src="http://myportfolio.local/skin/frontend/heykorean/default/images/icon/hey-logo.png"
+                 alt="heykorean" class="large"/>
+            <img src="http://myportfolio.local/skin/frontend/heykorean/default/images/icon/hey-logo.png"
+                 alt="heykorean" class="small"/>
+        </a>
+        <h1>PHOTO ESSAY</h1>
+        <div class="clearfix"></div>
+    </div>
+    <!-- Navigation -->
+    <div id="header-nav" class="skip-content">
+        <div class="limit-width">
+            <nav id="nav">
+                <ol class="nav-primary">
+                    <li class="level0"><a href="javascript:void(0)">Home</a>
+                    <li class="level0"><a href="javascript:void(0)">Best Photo</a>
+                    <li class="level0"><a href="javascript:void(0)">Everyday Life</a>
+                    <li class="level0"><a href="javascript:void(0)">Travel</a>
+                    <li class="level0"><a href="javascript:void(0)">Character</a>
+                    <li class="level0"><a href="javascript:void(0)">Pet</a>
+                    <li class="level0"><a href="javascript:void(0)">Event</a>
+                    <li class="level0"><a href="javascript:void(0)">Other</a>
+                    <li class="level0"><a href="javascript:void(0)">My photo</a>
+                    </li>
+                </ol>
+            </nav>
+            <div class="topsearch-wrapper">
+                <form method="get" action="http://myportfolio.local/catalogsearch/result/" id="search_mini_form">
+                    <div id="search-box">
+                                <span class="algolia-autocomplete">
+                                    <input type="text" placeholder="Search Bevilles" autocapitalize="off"
+                                           autocorrect="off"
+                                           spellcheck="false" autocomplete="off"
+                                           class="input-text algolia-search-input aa-input"
+                                           name="q" id="search">
+                                </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Static Block Header Promo Message -->
+    <div class="header-bottom">
+        <div class="limit-width">
+            <div class="label"><h1>Photo</h1><span>Essay</span></div>
+            <div class="btn-upload">
+                <button class="button"><span><span>Upload photo</span></span></button>
+            </div>
+        </div>
+    </div>
+    <!-- End Static Block Header Promo Message -->
+
+</header>
+<div id="home-slider" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 900px; height: 410px; visibility: hidden;">
+    <!-- Loading Screen -->
+    <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+        <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+        <div style="position:absolute;display:block;background:url('../images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+    </div>
+    <div data-u="slides"
+         style="cursor: default; position: relative; top: 0px; left: 0px; width: 900px; height: 410px; overflow: hidden;">
+        <div data-p="112.50" style="display: none;">
+            <img data-u="image" src="http://myportfolio.local/skin/frontend/heykorean/default/images/002.jpg"/>
+        </div>
+        <div data-p="112.50" style="display: none;">
+            <img data-u="image" src="http://myportfolio.local/skin/frontend/heykorean/default/images/003.jpg"/>
+        </div>
+        <div data-p="112.50" style="display: none;">
+            <img data-u="image" src="http://myportfolio.local/skin/frontend/heykorean/default/images/004.jpg"/>
+        </div>
+        <div data-p="112.50" style="display: none;">
+            <img data-u="image" src="http://myportfolio.local/skin/frontend/heykorean/default/images/005.jpg"/>
+        </div>
+        <div data-p="112.50" style="display: none;">
+            <img data-u="image" src="http://myportfolio.local/skin/frontend/heykorean/default/images/006.jpg"/>
+        </div>
+    </div>
+    <!-- Arrow Navigator -->
+    <span data-u="arrowleft" class="controll btn" style="top:0px; left:-45px;width:40px;height:70px;"
+          data-autocenter="2"></span>
+    <span data-u="arrowright" class="controlr btn" style="top:0px;right:-50px;width:40px;height:70px;"
+          data-autocenter="2"></span>
+</div>

@@ -1,0 +1,375 @@
+//
+// Magento
+//
+// NOTICE OF LICENSE
+//
+// This source file is subject to the Academic Free License (AFL 3.0)
+// that is bundled with this package in the file LICENSE_AFL.txt.
+// It is also available through the world-wide-web at this URL:
+// http://opensource.org/licenses/afl-3.0.php
+// If you did not receive a copy of the license and are unable to
+// obtain it through the world-wide-web, please send an email
+// to license@magento.com so we can send you a copy immediately.
+//
+// DISCLAIMER
+//
+// Do not edit or add to this file if you wish to upgrade Magento to newer
+// versions in the future. If you wish to customize Magento for your
+// needs please refer to http://www.magento.com for more information.
+//
+// @category    design
+// @package     rwd_default
+// @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+// @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+//
+
+/* ============================================ *
+ * Homepage
+ * ============================================ */
+
+/* -------------------------------------------- *
+ * Primary Banner
+ */
+
+.header-language-background {
+    background-color: #393939;
+    color: $c-white;
+    a {
+        color: $c-white;
+    }
+}
+
+.header-language-container {
+    .page-header {
+        font-family: $hey-lt;
+    }
+    .top-header-left {
+        float: left;
+        .selector {
+            text-align: center;
+            border-radius: 30px;
+            position: relative;
+            width: 100px;
+            height: 22px;
+            display: inline-block;
+            vertical-align: top;
+            font-size: 13px;
+            color: #2c2929;
+            text-transform: none;
+            font-family: $robo-font;
+            -webkit-appearance: none;
+            overflow: hidden;
+            border: none;
+            background: #fff url("../images/icon/earth-ic.png") no-repeat left 5px center;
+        }
+    }
+
+    .top-header-right {
+        float: right;
+        width: 70%;
+        text-align: right;
+        .top-links, .top-control , li{
+            display: inline-block;
+            vertical-align: top;
+        }
+        .top-control li, button, .control-select-box {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .top-control {
+            > ul {
+                display: inline;
+                vertical-align: middle;
+            }
+            .button {
+                color: #2c2929;
+                font-size: 14px;
+                background: $c-white;
+                border-radius: 30px;
+                font-family: $robo-font;
+                font-weight: 500;
+                width: 78px;
+                height: 22px;
+                line-height: 10px;
+                margin: 0 5px;
+            }
+        }
+        .top-links {
+            padding-right: 25px;
+            li {
+                a {
+                    font-family: $hey-roman;
+                    font-size: 11px;
+                    line-height: 28px;
+                    padding: 0 5px;
+                    cursor: pointer;
+                }
+                &:last-child {
+                    a {
+                        position: relative;
+                        &:before {
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            margin-right: -15px;
+                            margin-top: -8px;
+                            font-size: 11px;
+                            font-family: $hey-iconfont;
+                            content: '\f078';
+                            color: #fff
+                        }
+                    }
+                }
+            }
+        }
+        .control-select-box {
+            .selector {
+                height: 26px;
+                width: 154px;
+                color: #767676;
+                font-size: 12px;
+                text-transform: capitalize;
+                text-align: center;
+                -webkit-appearance: none;
+                overflow: hidden;
+                border: none;
+                background: #fff url("../images/icon/google-ic.png") no-repeat left 2px center;
+            }
+        }
+    }
+}
+
+.page-header-container {
+    width: 100%;
+    display: inline-block;
+    height: 74px;
+    padding-top: 30px;
+    .logo {
+        min-height: 100%;
+        padding-left: 0;
+        width: auto;
+    }
+    > h1 {
+        line-height: 48px;
+        margin-bottom: 0;
+        color: #7bb2e5;
+        font-size: 25px;
+        font-family: $hey-lt;
+        font-weight: bold;
+    }
+}
+
+
+.main-container {
+    padding: 0;
+    margin-top: 50px;
+
+    .home-blocks {
+        &.col-left {
+            width: 69%;
+            max-width: 835px;
+        }
+    }
+    .navbar-right {
+        &.col-right {
+            width: 29%;
+            img {
+                width: 100%;
+            }
+        }
+        .new-feed {
+            margin-bottom: 20px;
+        }
+    }
+
+    .tabs-control {
+        width: 100%;
+        display: inline-block;
+        ul {
+            list-style: none;
+            margin: 0;
+            display: inline-block;
+            width: 100%;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            li {
+                float: left;
+                margin-left: 0;
+                padding: 8px 0;
+                a {
+                    font-size: 19px;
+                    color: #696969;
+                    font-family: $hey-lt;
+                    font-weight: normal;
+                    padding: 5px 15px;
+                    &:hover, &.active {
+                        background: #7ab1e4;
+                        color: $c-white;
+                        border-radius: 2px;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .tabs-content {
+        margin-top: 40px;
+        display: inline-block;
+        width: 100%;
+
+        .items-grid {
+            list-style: none;
+            width: 100%;
+            margin-bottom: 0;
+            padding: 0 20px;
+            .item {
+                float: left;
+                display: inline-block;
+                height: 250px;
+                text-align: left;
+                vertical-align: top;
+                width: 23.7%;
+                margin-right: 12px;
+                margin-bottom: 15px;
+                margin-left: 0;
+                position: relative;
+                &:nth-child(4n) {
+                    float: right;
+                    margin-right: 0;
+                }
+            }
+            .info {
+                h2, span {
+                    display: block;
+                }
+                span {
+                    font-size: 15px;
+                }
+                > h2 {
+                    font-family: $hey-md;
+                    margin-bottom: 0;
+                    margin-top: 10px;
+                    font-size: 19px;
+                    color: #373737;
+                    text-transform: capitalize;
+                    position: relative;
+                    &:after {
+                        position: absolute;
+                        content: '';
+                        right: 0;
+                        top: 0;
+                        width: 20px;
+                        height: 20px;
+                        margin-top: 5px;
+                        background: url('../images/icon/number-ic.png') no-repeat;
+                    }
+                }
+                .personal {
+                    color: #7bb2e5;
+                    font-family: $hey-it;
+                }
+                .recomment , .time {
+                    color: #a8a8a8;
+                    font-family: $hey-roman;
+                    letter-spacing: 0.75px;
+                }
+            }
+        }
+    }
+
+    .toolbar-bottom {
+        display: inline-block;
+        width: 100%;
+        .toolbar {
+            border: none;
+            background: #fff;
+            .pages {
+                float: none;
+                margin-left: 0;
+                text-align: center;
+                span {
+                    font-size: 17px;
+                    color: #717171;
+                    font-family: $hey-lt;
+                    font-weight: 600;
+                    padding: 0 5px;
+                }
+                input {
+                    width: 40px;
+                    height: 25px;
+                    border-radius: 4px;
+                    padding-left: 20px;
+                    border: 1px solid #cecece;
+                }
+                a {
+                    font-size: 0;
+                    height: 28px;
+                    width: 28px;
+                    border-radius: 2px;
+                    background: #cecece;
+                    position: relative;
+                    &:hover {
+                        &.prev, &.next {
+                            border: none;
+                        }
+                    }
+                    &:before {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 28px;
+                        height: 28px;
+                        border: none;
+                        color: $c-white;
+                        font-size: 14px;
+                        font-family: $hey-iconfont;
+                    }
+                    &.prev {
+                        &:before {
+                            margin-top: 8px;
+                            content: '\f053';
+                        }
+                    }
+                    &.next {
+                        &:before {
+                            margin-top: 14px;
+                            margin-left: 0;
+                            content: '\f054';
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* jssor slider arrow navigator skin 13 css */
+.btn {
+    display: block;
+    position: absolute;
+    /* size of arrow element */
+    cursor: pointer;
+    overflow: hidden;
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        border: none;
+        color: #bfbfbf;
+        margin-top: 18px;
+        font-size: 46px;
+        font-family: $hey-iconfont;
+    }
+    &.controll {
+        &:before {
+            content: '\f104';
+        }
+    }
+    &.controlr {
+        &:before {
+            content: '\f105';
+        }
+    }
+}

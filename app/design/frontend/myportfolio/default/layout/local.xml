@@ -1,0 +1,34 @@
+<layout version="0.1.0">
+    <default>
+        <reference name="root">
+            <remove name="header"/>
+            <remove name="footer"/>
+        </reference>
+        <reference name="head">
+            <action method="addLinkRel"><rel>stylesheet</rel>
+                <href>//fonts.googleapis.com/css?family=Montserrat%3A400%2C700%7COpen+Sans%3A400%2C400italic%2C600%2C300italic%2C300&#038;subset=latin%2Clatin-ext</href>
+            </action>
+
+            <action method="addItem"><type>skin_js</type><name>js/jquery.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/jquery-migrate.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/bootstrap.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/perfect-scrollbar.jquery.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/lightbox.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/owl.carousel.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/scripts.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/validate.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/holder.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/myportfolio.js</name></action>
+
+            <!-- Add stylesheets customize-->
+            <action method="addItem"><type>skin_css</type><name>css/customize/bootstrap.min.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
+            <action method="addItem"><type>skin_css</type><name>css/customize/font-awesome.min.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
+            <action method="addItem"><type>skin_css</type><name>css/customize/nivo-lightbox.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
+            <action method="addItem"><type>skin_css</type><name>css/customize/owl.carousel.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
+            <action method="addItem"><type>skin_css</type><name>css/customize/owl.theme.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
+            <action method="addItem"><type>skin_css</type><name>css/customize/perfect-scrollbar.min.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
+            <action method="addItem"><type>skin_css</type><name>css/customize/customize.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
+
+        </reference>
+    </default>
+</layout>

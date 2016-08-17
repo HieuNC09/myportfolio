@@ -1,0 +1,17 @@
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addLinkRel"><rel>stylesheet</rel>
+                <href>//fonts.googleapis.com/css?family=Open+Sans|Roboto</href>
+            </action>
+
+            <action method="addItem"><type>skin_js</type><name>js/jquery-1.11.3.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/jssor.slider-21.1.5.mini.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/heykorean.js</name></action>
+
+            <!-- Add stylesheets customize-->
+            <action method="addItem"><type>skin_css</type><name>css/heykorean.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
+
+        </reference>
+    </default>
+</layout>

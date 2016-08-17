@@ -1,0 +1,1026 @@
+//
+// Magento
+//
+// NOTICE OF LICENSE
+//
+// This source file is subject to the Academic Free License (AFL 3.0)
+// that is bundled with this package in the file LICENSE_AFL.txt.
+// It is also available through the world-wide-web at this URL:
+// http://opensource.org/licenses/afl-3.0.php
+// If you did not receive a copy of the license and are unable to
+// obtain it through the world-wide-web, please send an email
+// to license@magento.com so we can send you a copy immediately.
+//
+// DISCLAIMER
+//
+// Do not edit or add to this file if you wish to upgrade Magento to newer
+// versions in the future. If you wish to customize Magento for your
+// needs please refer to http://www.magento.com for more information.
+//
+// @category    design
+// @package     rwd_default
+// @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+// @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+//
+
+@charset "UTF-8";
+
+/* ============================================ *
+ * Base Styles
+ * ============================================ */
+
+@-ms-viewport {
+    width: device-width;
+}
+
+@-o-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
+
+// Prevent 300ms delay in IE on touch devices
+a, button {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+body,
+button,
+input,
+select,
+table,
+textarea {
+    font-family: $hey-lt;
+    color: $c-text;
+    font-size: $f-size;
+    line-height: $b-line-height;
+}
+
+a {
+    color: $c-link;
+    text-decoration: none;
+}
+
+a:hover {
+    color: $c-link-hover;
+    text-decoration: underline;
+}
+
+a:focus {
+    outline-color: $c-link-active;
+    color: darken($c-action, 30%);
+}
+
+ol,
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ============================================ *
+ * Typography
+ * ============================================ */
+
+h1, .h1 { @include h1; }
+
+h2, .h2 { @include h2; }
+
+h3, .h3 { @include h3; }
+
+h4, .h4 { @include h4; }
+
+h5, .h5 { @include h5; }
+
+h6, .h6 { @include h6; }
+
+/* ============================================ *
+ * Shared Classes
+ * ============================================ */
+
+.col-left,
+.col-right {
+    // Align the vertical height of the anchor to line up with the button
+    .block .actions .button ~ a {
+        line-height: 33px;
+        margin-right: 5px;
+    }
+}
+
+/* ============================================ *
+ * Buttons
+ * ============================================ */
+
+/* Secondary Buttons */
+.button.button-secondary {
+    background: $c-button-secondary;
+    color: $c-text;
+    padding: 7px 15px;
+
+    &:hover {
+        background: $c-button-secondary-hover;
+        cursor: pointer;
+    }
+
+    &:active {
+        background: $c-button-secondary-active;
+        color: $c-text;
+    }
+
+    &:focus {
+        color: $c-text;
+        background: $c-button-secondary-active;
+        outline: none;
+    }
+}
+
+.sidebar .actions button.button {
+    white-space: normal;
+}
+
+/* Primary Buttons */
+
+.button,
+.footer .button {
+    background: $c-button;
+    display: inline-block;
+    padding: 7px 15px;
+    border: 0;
+    color: #FFFFFF;
+    font-size: $f-size-s;
+    font-weight: normal;
+    font-family: $f-stack-special;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &:hover {
+        background: $c-button-hover;
+        cursor: pointer;
+    }
+    &:active {
+        background: $c-button-active;
+        color: #FFFFFF;
+    }
+    &:focus {
+        background-color: $c-button-active;
+        outline: none;
+        color: #FFFFFF;
+    }
+}
+
+a.button {
+    text-decoration: none;
+}
+
+a.button:hover {
+    color: #FFFFFF;
+}
+
+/* Disabled - class for anchor, state for form elements */
+.button.disabled,
+.button:disabled {
+    background: #C8C8C8;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Adjacent buttons */
+.button + .button {
+    margin-left: 5px;
+}
+
+// This mixin gets applied to elements that are only buttons on smartphones (or sometimes tablets), such as layered
+// nav links or checkbox labels.
+// Building this as a mixin (rather than an extendable class) since it will be included within mq breakpoints, and
+// extending doesn't work within media queries: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_in_directives
+@mixin touch-button {
+    color: $c-text;
+    background-color: $c-module-background;
+    padding: 5px 10px;
+}
+
+.button2 {
+    border: 0;
+    padding: 0 5px;
+    margin: 0;
+    background: transparent;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.button2:focus {
+    outline: none;
+}
+
+.button2 span,
+.button2 span span {
+    line-height: 30px;
+    height: 30px;
+    text-decoration: underline;
+    text-transform: uppercase;
+    display: inline-block;
+    color: $c-action;
+    font-family: $f-stack-special;
+
+    &:hover {
+        text-decoration: none;
+        color: $c-stimulus;
+    }
+}
+
+@include bp(max-width, $bp-medium) {
+    .col2-set .buttons-set {
+        .button,
+        .button2 {
+            float: none;
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .back-link {
+            display: none;
+        }
+        .required {
+            display: none;
+        }
+    }
+}
+
+@include bp(max-width, $bp-xsmall) {
+    .buttons-set {
+        .button {
+            float: none;
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: $element-spacing;
+        }
+        .back-link {
+            display: none;
+        }
+        .required {
+            display: none;
+        }
+    }
+}
+/* -------------------------------------------- *
+ * Icons
+ */
+
+.icon-sprite {
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    @include image-replacement;
+}
+
+@include if-min-resolution(2) {
+    .icon-sprite {
+        background-image: url(../images/icon_sprite@2x.png);
+        background-size: 100px 1000px;
+    }
+}
+
+/* -------------------------------------------- *
+ * Container
+ */
+
+.main-container,
+.footer-container {
+    position: relative;
+    max-width: $max-container-width;
+    margin: 0 auto;
+    padding: $trim-small;
+
+    &:after {
+        @include clearfix;
+    }
+}
+
+@include bp(min-width, 480px) {
+
+    .main-container,
+    .footer-container {
+        padding: $trim;
+    }
+}
+
+.footer-container {
+    padding-top: 0px;
+}
+
+/* -------------------------------------------- *
+ * Column Layouts
+ */
+
+.main:after,
+.col-wrapper:after {
+    @include clearfix;
+}
+
+.col-left,
+.col-right,
+.col-main {
+    padding: 0 10px;
+}
+
+.col-left {
+    float: left;
+    width: percentage(240px/960px);
+    padding-left: 0; /* Remove the 15px padding */
+    clear: left;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.col-right {
+    float: right;
+    width: percentage(240px/960px);
+    padding-right: 0; /* Remove the 15px padding */
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.col-main {
+    float: left;
+    width: percentage(720px/960px);
+}
+
+.col1-layout {
+    .col-main {
+        float: none;
+        width: auto;
+        padding: 0; /* Remove the 15px padding */
+    }
+}
+
+.col2-left-layout {
+    .col-main {
+        float: right;
+        padding-right: 0; /* Remove the 15px padding */
+    }
+}
+
+.col2-right-layout {
+    .col-main {
+        padding-left: 0; /* Remove the 15px padding */
+    }
+}
+
+.col3-layout {
+    .col-right {
+        width: percentage(200px/960px);
+    }
+
+    .col-wrapper {
+        float: left;
+        width: percentage(760px/960px);
+
+        .col-main {
+            float: right;
+            width: percentage(560px/760px);
+        }
+
+        .col-left {
+            width: percentage(200px/760px);
+        }
+    }
+}
+
+@include bp(max-width, 1000px) {
+    .col3-layout {
+        .col-right {
+            float: left;
+            clear: left;
+            padding-left: 0;
+            padding-right: 10px;
+            width: percentage(240px/960px);
+        }
+
+        .col-wrapper {
+            float: right;
+            width: 100%;
+
+            .col-main {
+                float: right;
+                width: percentage(720px/960px);
+            }
+
+            .col-left {
+                width: percentage(240px/960px);
+            }
+        }
+    }
+}
+
+@include bp(max-width, $bp-medium) {
+    .col-left,
+    .col-right,
+    .col-main,
+    .col1-layout .col-left,
+    .col1-layout .col-right,
+    .col1-layout .col-main,
+    .col2-left-layout .col-left,
+    .col2-left-layout .col-right,
+    .col2-left-layout .col-main,
+    .col2-right-layout .col-left,
+    .col2-right-layout .col-right,
+    .col2-right-layout .col-main,
+    .col3-layout .col-wrapper .col-left,
+    .col3-layout .col-right,
+    .col3-layout .col-wrapper .col-main {
+        padding: 0;
+        margin-bottom: 10px; // Since columns are stacked, we want there to be vertical spacing
+        float: none;
+        width: auto;
+    }
+
+    .col3-layout .col-wrapper {
+        float: none;
+        width: auto;
+    }
+
+    .col-main {
+        float: none;
+        width: auto;
+    }
+
+    .col-main .col-left {
+        padding: 0; /* On product listing pages, the left column gets moved inside col-main on small viewports */
+    }
+}
+
+/* Content Columns */
+
+.col2-set {
+    width: 100%;
+
+    .col-1,
+    .col-2 {
+        width: 50%;
+        padding: $box-spacing-large;
+
+        @include bp(max-width, $bp-medium) {
+            padding: $box-spacing;
+        }
+    }
+
+    .col-1 {
+        float: left;
+        padding-left: 0;
+    }
+
+    .col-2 {
+        float: right;
+        padding-right: 0;
+    }
+
+    @include bp(max-width, $bp-xsmall) {
+        .col-1,
+        .col-2 {
+            float: none;
+            width: auto;
+            border: 0;
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    .narrow {
+        width: 33%;
+    }
+
+    .wide {
+        width: 65%;
+    }
+
+    &:after {
+        @include clearfix;
+    }
+}
+
+/* -------------------------------------------- *
+ * Top Container
+ */
+@include bp(min-width, $bp-medium + 1) {
+    .top-container {
+        max-width: $max-container-width;
+        margin: 0 auto;
+        padding: 0 $trim;
+    }
+}
+
+/* -------------------------------------------- *
+ * Grid
+ */
+
+.grid:after {
+    @include clearfix;
+}
+
+/* -------------------------------------------- *
+ * Messages
+ */
+.success {
+    color: $c-success;
+}
+
+.error {
+    color: $c-danger;
+    font-weight: bold;
+}
+
+.notice {
+    color: $c-warn;
+    font-weight: bold;
+}
+
+/* -------------------------------------------- *
+ * Messages
+ */
+
+.messages {
+    margin-bottom: $gap;
+}
+
+.messages li li {
+    position: relative;
+    margin-bottom: 5px;
+    padding: 7px 10px 7px 20px;
+    background: $c-module-background;
+    font-size: $f-size-l;
+}
+
+.messages li li:before {
+    top: 50%;
+    left: 0;
+    margin-top: -6px;
+}
+
+.messages .error-msg li {
+    color: $c-black;
+    border-left: 5px solid $c-danger;
+    background-color: $c-danger-background;
+}
+
+.messages .error-msg li:before {
+    @include triangle(right, 6px, $c-danger);
+}
+
+.messages .notice-msg li {
+    color: $c-black;
+    border-left: 5px solid $c-warn;
+    background-color: $c-warn-background;
+}
+
+.messages .notice-msg li:before {
+    @include triangle(right, 6px, $c-warn);
+}
+
+.messages .success-msg li {
+    color: $c-black;
+    border-left: 5px solid $c-success;
+    background-color: $c-success-background;
+}
+
+.messages .success-msg li:before {
+    @include triangle(right, 6px, $c-success);
+}
+
+// ---------------------------------------------
+
+@include bp(min-width, 915px) {
+
+    .order-list-grid .col-1 {
+        width: 30%;
+    }
+
+    .order-list-grid .col-2 {
+        width: 50%;
+        padding-right: 20px;
+    }
+
+    .order-list-grid .col-3 {
+        clear: none;
+        width: 20%;
+        padding-top: 0;
+    }
+
+}
+
+/* -------------------------------------------- *
+ * Page Popup
+ */
+
+.page-popup {
+    padding: 20px;
+    background: #FFFFFF;
+    height: auto;
+}
+
+.page-popup h1 {
+    margin: 0 0 0.5em;
+    font-size: 36px;
+}
+
+/* -------------------------------------------- *
+ * Please Wait (Loading Indicator)
+ */
+
+.please-wait {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 5px;
+    line-height: 24px;
+    height: 24px;
+    white-space: nowrap; /* Prevent the linebreak in the HTML from causing layout issues */
+
+    img {
+        float: left;
+        margin-right: 5px;
+        width: 24px; // Actual image is 48px, thereby supporting hi-res screens
+    }
+}
+
+/* -------------------------------------------- *
+ * Standard Formatted Text Block
+ */
+
+.std p {
+    margin: 0 0 $b-margin-bottom;
+}
+
+.std ol {
+    list-style: decimal outside;
+    margin-bottom: $b-margin-bottom;
+}
+
+.std ol li {
+    margin-left: 2em;
+}
+
+.std ul {
+    list-style: disc outside;
+    margin-bottom: $b-margin-bottom;
+}
+
+.std ul li {
+    margin-left: 2em;
+}
+
+.std .note {
+    color: $c-text-gray;
+    font-size: $f-size-s;
+}
+
+/* -------------------------------------------- *
+ * Tabs
+ */
+
+.tabs {
+    margin-bottom: $gap;
+    background: #FFFFFF;
+}
+
+/* -------------------------------------------- *
+ * Toolbar
+ */
+
+.toolbar {
+    margin-top: $box-spacing;
+    margin-bottom: 15px;
+    border-bottom: 1px solid $c-module-border;
+    border-top: 1px solid $c-module-border;
+    background: $c-module-background;
+    padding: 5px 10px 0px 10px;
+
+    &:after {
+        @include clearfix;
+    }
+}
+
+.pager-no-toolbar {
+    margin-bottom: $box-spacing;
+}
+
+// This will apply to the bottom toolbar
+.pager-no-toolbar ~ .pager-no-toolbar {
+    margin-top: $box-spacing;
+}
+
+.toolbar,
+.pager {
+    font-family: $f-stack-special;
+    color: $c-text;
+    line-height: 30px;
+    font-size: $f-size-xs;
+}
+
+.toolbar label,
+.pager-no-toolbar label {
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+$toolbar-icon-padding-offset: 8px;
+
+.sorter {
+    float: left;
+    margin-bottom: 5px;
+
+    label {
+        float: left;
+        margin-right: 5px;
+
+        &:after {
+            content: ':';
+        }
+    }
+}
+
+.sorter > .sort-by {
+    float: left;
+    margin-right: 5px;
+    height: 30px;
+
+    .sort-by-switcher {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        @extend .icon-sprite;
+    }
+    .sort-by-switcher--asc {
+        background-position: 0+4px (-550px+$toolbar-icon-padding-offset);
+        &:hover {
+            background-position: -50px+4px (-550px+$toolbar-icon-padding-offset);
+        }
+    }
+    .sort-by-switcher--desc {
+        background-position: 0+4px (-575px+$toolbar-icon-padding-offset);
+        &:hover {
+            background-position: -50px+4px (-575px+$toolbar-icon-padding-offset);
+        }
+    }
+}
+
+.sorter > .view-mode {
+    float: right;
+
+    .grid,
+    .list {
+        float: left;
+        width: 30px;
+        height: 30px;
+        @extend .icon-sprite;
+    }
+    .grid {
+        margin-right: 5px;
+        background-position: $toolbar-icon-padding-offset (-500px+$toolbar-icon-padding-offset);
+    }
+    strong.grid,
+    a.grid:hover {
+        background-position: -50px+$toolbar-icon-padding-offset (-500px+$toolbar-icon-padding-offset);
+    }
+    .list {
+        // We want the icon to line up with the container width, so we are adding 3px
+        background-position: $toolbar-icon-padding-offset+3px (-525px+$toolbar-icon-padding-offset);
+    }
+    strong.list,
+    a.list:hover {
+        background-position: -50px+$toolbar-icon-padding-offset+3px (-525px+$toolbar-icon-padding-offset);
+    }
+}
+
+.pager {
+    float: right;
+    overflow: hidden;
+
+    & > .count-container {
+        float: left;
+    }
+
+    .amount {
+        float: left;
+        font-family: $f-stack-sans;
+        white-space: nowrap;
+        margin: 0 15px 0 0;
+    }
+
+    .limiter {
+        float: left;
+        height: 30px;
+        line-height: 30px;
+
+        & > label {
+            padding-right: 5px;
+
+            &:after {
+                content: ':';
+            }
+        }
+    }
+
+    .amount,
+    .limiter,
+    .pages {
+        margin-bottom: 5px;
+    }
+
+}
+
+.pages {
+    float: right;
+    overflow: hidden;
+    margin-left: 15px;
+
+    strong {
+        display: none;
+    }
+}
+
+.pages li {
+    float: left;
+}
+
+.pages a,
+.pages .current {
+    display: inline-block;
+    border: 0;
+    font-size: $f-size-s;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+    line-height: 30px;
+    width: 25px;
+    height: 30px;
+    padding: 0;
+    color: $c-action;
+    font-family: $f-stack-sans;
+}
+
+.pages .current,
+.pages .current:hover {
+    color: $c-text;
+    border: 1px solid $c-module-border;
+    width: 30px;
+    background-color: #FFFFFF;
+    cursor: default;
+}
+
+.pages .next,
+.pages .previous {
+    // New HP5BP technique: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757c9e03dda4e463fb0d4db5a5f82d7
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+    background-color: transparent;
+    position: relative;
+
+    &:hover {
+        border: 1px solid $c-action;
+    }
+}
+
+.pages .next {
+    &:before {
+        @include triangle(right, 4px, $c-action);
+        top: 50%;
+        margin-top: -3px;
+        left: 50%;
+        margin-left: -2px;
+    }
+    &:hover:before {
+        @include triangle(right, 4px, $c-stimulus);
+    }
+}
+
+.pages .previous {
+    &:before {
+        @include triangle(left, 4px, $c-action);
+        top: 50%;
+        margin-top: -3px;
+        left: 50%;
+        margin-left: -2px;
+    }
+    &:hover:before {
+        @include triangle(left, 4px, $c-stimulus);
+    }
+}
+
+@include bp(max-width, $bp-xsmall) {
+    // Only hide the "amount" element if page has pagination AND is inside of toolbar (since we only want it hiding on product listing)
+    // Otherwise show the amount since there is plenty of space
+    .pager .amount--has-pages {
+        display: none;
+    }
+
+    .pages {
+        float: left;
+    }
+
+    // When there are 5+ pages, it is important to hide this label in order to not break to three lines
+    .limiter label {
+        display: none;
+    }
+}
+
+@include bp(max-width, $bp-medium) {
+    // One one column layouts, the toolbar doesn't have to break until a smaller viewport
+    .col1-layout {
+        .sorter,
+        .pager {
+            width: 100%;
+        }
+
+        .pager {
+            float: left;
+            clear: both;
+
+            .pages {
+                float: left;
+                margin-left: 0;
+            }
+
+            .count-container {
+                float: right;
+            }
+        }
+    }
+}
+
+@include bp(max-width, $bp-large) {
+
+    .col2-left-layout,
+    .col2-right-layout,
+    .col3-layout {
+        .sorter,
+        .pager {
+            width: 100%;
+        }
+
+        .pager {
+            float: left;
+            clear: both;
+
+            .pages {
+                float: left;
+                margin-left: 0;
+            }
+
+            .count-container {
+                float: right;
+            }
+        }
+    }
+}
+
+@include bp(max-width, 1279px) {
+
+    .toolbar .view-mode > label {
+        display: none;
+    }
+}
+
+/* ============================================ *
+ * Magento Helpers
+ * ============================================ */
+
+.a-center {
+    text-align: center;
+}
+
+.a-right,
+.align-right {
+    text-align: right;
+}
+
+.no-display {
+    display: none !important;
+}
+
+.nobr,
+.nowrap {
+    white-space: nowrap;
+}
+
+.width-full {
+    width: 100%;
+}
+
+/* ============================================ *
+ * Custom Helpers
+ * ============================================ */
+
+.hidden {
+    display: none;
+}
